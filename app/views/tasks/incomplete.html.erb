@@ -1,0 +1,44 @@
+
+<h1>Incompleted Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Task</th>
+      <th>Category</th>
+      <th>Deadline</th>
+      <th>Is completed</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= form_tag("/tasks/complete/", :method => "post") do %>   
+    <% @tasks.each do |task| %>
+      <tr>
+        <% if task.is_completed == true %>
+     <td> <%= check_box_tag  "task_checkbox[]",task.id, task.is_completed %></td> <td> <strike><%= task.Task %></strike> </td>
+  <% else %>
+     <td> <%= check_box_tag  "task_checkbox[]",task.id, task.is_completed %></td> <td><%= task.Task %></td>
+  <% end %>
+        
+        <td><%= task.Category %></td>
+        <td><%= task.Deadline %></td>
+        <td><%= task.is_completed %></td>
+        
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        
+      </tr>
+    <% end %>
+    <%= submit_tag("Confirm Marked Task(s)", :class=>"btn btn-success") %>
+
+     
+<%end%>
+
+  </tbody>
+
+</table>
+<%= button_to 'Back to List', '/tasks', :class => 'btn btn-danger', :method => "get" %>

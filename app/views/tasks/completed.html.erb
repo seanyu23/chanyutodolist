@@ -1,0 +1,36 @@
+
+<h1>Completed Tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Task</th>
+      <th>Category</th>
+      <th>Deadline</th>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+  <%= form_tag("/tasks/completed/", :method => "post") do %>   
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.Task %></td>    
+        
+        <td><%= task.Category %></td>
+        <td><%= task.Deadline %></td>
+        
+      </tr>
+    <% end %>
+<%end%>
+  </tbody>
+
+</table>
+
+  <%= button_to 'Back to List', tasks_path, :class => 'btn btn-danger', :method => "get" %>
+
+
+<br>
+
+

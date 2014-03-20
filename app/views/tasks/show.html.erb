@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @task.Task %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @task.Category %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @task.Deadline %>
+</p>
+
+<p>
+  <strong>Is completed:</strong>
+  <%= @task.is_completed %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= button_to 'Back to List', tasks_path, :class => 'btn btn-danger', :method => "get" %>
