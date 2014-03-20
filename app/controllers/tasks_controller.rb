@@ -102,5 +102,7 @@ def all
     def task_params
       params.require(:task).permit(:Task, :Category, :Deadline, :is_completed, :user_id)
     end
-    
+    def task_model      
+      Task.owner(current_user)
+    end
 end
