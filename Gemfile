@@ -31,13 +31,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass'
+gem 'pg'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 group :production do
-	gem 'pg'
+
 	gem 'rails_12factor', '0.0.2'
 end
 # Use ActiveModel has_secure_password
