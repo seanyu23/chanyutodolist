@@ -9,7 +9,7 @@ ToDoList50::Application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
-  config.action_mailer.default_url_options = { host: 'hidden-thicket-3035.herokuapp.com' }
+  #config.action_mailer.default_url_options = { host: 'hidden-thicket-3035.herokuapp.com' }
   
 
   # Full error reports are disabled and caching is turned on.
@@ -22,7 +22,7 @@ ToDoList50::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
